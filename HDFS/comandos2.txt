@@ -1,0 +1,50 @@
+hdfs dfs -setfacl -R -m user:leonor:rw- /juliovasquez/archivo_vacio.txt
+
+hdfs dfs -setfacl -R -m group:ulima:r-x /juliovasquez/archivo_vacio.txt
+
+hdfs dfs -getfacl /juliovasquez/archivo_vacio.txt
+
+hdfs dfs -put home/julio/persona.data /juliovasquez
+
+cksum /home/julio/persona.data
+
+hdfs dfs -cat /juliovasquez/persona.data | cksum
+
+hdfs dfs -setrep -w 3 -R /juliovasquez 
+
+---
+
+beeline -u jdbc:hive2://
+
+show databases;
+
+create database bigdata;
+
+create schema miusuario_test;
+
+CREATE TABLE MIUSUARIO_TEST.PERSONA( 
+ID STRING, 
+NOMBRE STRING, 
+TELEFONO STRING, 
+CORREO STRING, 
+FECHA_INGRESO STRING, 
+EDAD INT, 
+SALARIO DOUBLE, 
+ID_EMPRESA STRING 
+) 
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY '|' 
+LINES TERMINATED BY '\n' 
+STORED AS TEXTFILE; 
+
+
+show tables in miusuario_test;
+
+hdfs dfs -ls /user/hive/warehouse 
+
+hdfs dfs -put /home/julio/persona.data /user/hive/warehouse/miusuario_test.db/persona
+
+DESC formatted MIUSUARIO_TEST.PERSONA;
+
+CREATE DATABASE MIUSUARIO_TEST2 LOCATION "/user/miusuario/bd/miusuario_test2"; 
+

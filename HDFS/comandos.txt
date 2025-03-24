@@ -1,0 +1,83 @@
+# EJERCICIOS [PROGRAMACIÓN BÁSICA]
+#--------------------------------------------------
+# Alumno: Julio Alexander Vasquez Pacheco
+#--------------------------------------------------
+
+#Comando 1 - Crear carpeta /user/juliovasquez
+hdfs dfs -mkdir /user/juliovasquez
+
+#comando 2 - crear carpeta /user/juliovasquez/ejercicio1
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1
+
+#comando 3 - crear carpeta /user/juliovasquez/ejercicio1/carpeta1
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/carpeta1
+
+#comando 4 - crear carpeta /user/juliovasquez/ejercicio1/carpeta1/subcarpeta1
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/carpeta1/subcarpeta1
+
+#comando 5 - copiar persona.data de servidor linux a /user/juliovasquez/ejercicio1/carpeta1/subcarpeta1
+hdfs dfs -put /home/julio/persona.data /user/juliovasquez/ejercicio1/carpeta1/subcarpeta1
+
+#comando 6 - crear carpeta /user/juliovasquez/ejercicio1/carpeta1/subcarpeta2
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/carpeta1/subcarpeta2
+
+#comando 7 - crear carpeta /user/juliovasquez/ejercicio1/carpeta1/subcarpeta3
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/carpeta1/subcarpeta3
+
+#comando 8 - crear carpeta /user/juliovasquez/ejercicio1/carpeta2
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/carpeta2
+
+#comando 9 - copiar empresa.data de servidor linux a /user/juliovasquez/ejercicio1/carpeta2
+hdfs dfs -put /home/julio/empresa.data /user/juliovasquez/ejercicio1/carpeta2
+
+#comando 10 - crear carpeta /user/juliovasquez/ejercicio1/carpeta3
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/carpeta3
+
+#comando 11 - crear carpeta /user/juliovasquez/ejercicio1/data1
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/data1
+
+#comando 12 - copiar file.csv de servidor linux a /user/juliovasquez/ejercicio1/data1
+hdfs dfs -put /home/julio/file.csv /user/juliovasquez/ejercicio1/data1
+
+#comando 13 - asignacion de permisos superusuario para cambiar dueños
+sudo su 
+su hdfs 
+
+#comando 14 - a file.csv se le asigna el usuario dueño: usuario5 y grupo dueño: grupoA
+hdfs dfs -chown usuario5:grupoA /user/juliovasquez/ejercicio1/data1/file.csv
+
+#comando 15 - asignando permisos 755 a file.csv
+hdfs dfs -chmod 755 /user/juliovasquez/ejercicio1/data1/file.csv
+
+#comando 16 - copiar voidfile.csv de servidor linux a /user/juliovasquez/ejercicio1/data1
+hdfs dfs -put /home/julio/voidfile.csv /user/juliovasquez/ejercicio1/data1
+
+#comando 17 - asignando permisos 700 a voidfile.csv
+hdfs dfs -chmod 700 /user/juliovasquez/ejercicio1/data1/voidfile.csv
+
+#comando 18 - crear carpeta /user/juliovasquez/ejercicio1/data2
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/data2
+
+#comando 19 - crear carpeta /user/juliovasquez/ejercicio1/data2/2017-01-27
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/data2/2017-01-27
+
+#comando 20 - copiar file.csv de servidor linux a /user/juliovasquez/ejercicio1/data2/2017-01-27
+hdfs dfs -put /home/julio/file.csv /user/juliovasquez/ejercicio1/data2/2017-01-27
+
+#comando 21 - crear carpeta /user/juliovasquez/ejercicio1/data2/2017-01-28
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/data2/2017-01-28
+
+#comando 22 - copiar file.csv de servidor linux a /user/juliovasquez/ejercicio1/data2/2017-01-28
+hdfs dfs -put /home/julio/file.csv /user/juliovasquez/ejercicio1/data2/2017-01-28
+
+#comando 23 - crear carpeta /user/juliovasquez/ejercicio1/data2/2017-01-29
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/data2/2017-01-29
+
+#comando 24 - a carpeta data2 y a su contenido se le asigna el usuario dueño: usuario2 y grupo dueño: grupoK de forma recursiva
+hdfs dfs -chown -R usuario2:grupoK /user/juliovasquez/ejercicio1/data2
+
+#comando 25 - asignando permisos 777 a carpeta data2 y a su contenido de forma recursiva
+hdfs dfs -chmod -R 777 /user/juliovasquez/ejercicio1/data2
+
+#comando 26 - crear carpeta /user/juliovasquez/ejercicio1/data3
+hdfs dfs -mkdir /user/juliovasquez/ejercicio1/data3
